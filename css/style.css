@@ -1,0 +1,207 @@
+body {
+     font-family: 'Kumbh Sans', sans-serif;
+     font-size: 12px;
+     font-weight: 400;
+     background: linear-gradient(180deg,hsl(273, 75%, 66%) 0%,hsl(240, 73%, 65%) 100%);
+     background-repeat: no-repeat;
+     min-height: 100vh;
+}
+
+.faq {  
+     width: calc(100% - 47px);
+     background-color: white;
+     margin: 148px auto;
+     border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+     box-shadow: 0px 13px 13px -4px #56469f;
+}
+
+.faq-image-wrapper-desktop {
+     display: none;
+}
+
+.faq-image-wrapper-mobile {
+     position: relative;
+     padding-top: 138px;
+    
+     }
+.faq-image-wrapper-mobile::after {
+     content: "";
+     display: block;
+     left: 50%;
+     top: 0;
+     width: 238px;
+     height: 100%;
+     position: absolute;
+     background: url('/images/bg-pattern-mobile.svg');
+     background-size: contain;
+     background-repeat: no-repeat;
+     transform: translate(-50%);
+     cursor: pointer;
+     }
+
+.faq-image-wrapper-mobile img {
+     max-width: 238px;
+     width: 100%;
+     height: auto;
+     position: absolute;
+     left: 50%;
+     top: -112px;
+     transform: translateX(-50%);
+}
+
+.faq-content {
+     padding-left: 28px;
+     padding-right: 28px;
+     display: flex;
+     flex-direction: column;
+}
+
+.faq-content h1 {
+     margin-top: 0;
+     margin-bottom: 40px;
+     text-align: center;
+     font-weight: 700;
+}
+
+.accordion .contentBox {
+     position: relative;
+     border-bottom: 0.5px solid gray;
+
+
+}
+
+.accordion .contentBox .question {
+     position: relative;
+     cursor: pointer;
+     font-weight: 600;
+     line-height: 26px;
+ 
+     
+}
+
+.accordion .contentBox .answer {
+     position: relative;
+     height: 0;
+     transition: 0.3s;
+     overflow-y: auto;
+     overflow: hidden;
+}
+
+.accordion .contentBox.active .answer {
+ height: 95px;
+}
+
+.accordion .contentBox.active .question:hover {
+     color: orangered;
+}
+
+.accordion .contentBox.active .question::after  {
+     transform: rotate(-180deg);
+}
+
+.contentBox .question::after {
+     content: ' ';
+     position: absolute;
+     background-image: url(/images/icon-arrow-down.svg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 15px;
+     height: 10px;
+     top: 10px;
+     right: -7px;
+     
+     
+}
+
+.contentBox {
+     padding: 0;
+     margin-top: 10px;
+     margin-bottom: 20px;
+}
+
+.contentBox p {
+     font-size: 13px;
+     margin-top: 20px;
+     cursor: pointer;
+    }
+
+.contentBox .answer p {
+     display: block;
+     margin-bottom: 10px;
+     padding: 0 auto;
+} 
+
+@media screen and (min-width:930px) {
+     .faq {
+          max-width: 929px;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 128px auto;
+     }
+     .faq-image-wrapper-mobile {
+          display: none;
+     }
+     .faq-image-wrapper-desktop {
+          display: block;
+
+}
+     .faq-content {
+          padding: 0;
+          margin-right: 90px;
+     }
+
+     .faq-content h1 {
+          width: 348px;
+          margin-top: 70px;
+          text-align: left;
+     }
+     .faq-content .accordion {
+          width: 348px;
+          margin-bottom: 80px;
+     }
+
+     .faq-content li .question:hover {
+          color: hsl(14, 88%, 65%);
+     }
+
+     .faq-image-wrapper-desktop {
+          position: relative;
+          width: 300px;
+     }
+     .box-desktop {
+          position: absolute;
+          top: 59%;
+          left: 2px;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+     }
+     .faq-image-wrapper-inner {
+          position: relative;
+          overflow: hidden;
+          width: 175%;
+          height: 100%;
+
+     }
+     .faq-image-wrapper-inner::after {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 250%;
+          position: absolute;
+          top: -345px;
+          left: -102px;
+          background-image: url("../images/bg-pattern-desktop.svg");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+      }
+
+      .img-desktop {
+          position: absolute;
+          left: -86px;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+}
